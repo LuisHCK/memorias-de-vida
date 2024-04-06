@@ -1,0 +1,15 @@
+services:
+    memorias-de-vida:
+        container_name: memorias-de-vida
+        build: .
+        volumes:
+            - .:/app
+            - /app/node_modules
+        restart: always
+        entrypoint: npm run dev --host
+        ports:
+            - 4321:4321
+        env_file:
+            - .env
+        environment:
+            - HOST=0.0.0.0
