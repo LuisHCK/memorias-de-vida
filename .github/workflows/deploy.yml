@@ -26,5 +26,5 @@ jobs:
             cd ~/memorias-de-vida
             git pull
             docker compose down -t 0
-            docker compose up -f docker-compose.prod.yml up -d --build
+            docker compose -f docker-compose.prod.yml up -d --build
             echo "Deployment completed!"
