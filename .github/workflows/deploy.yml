@@ -3,7 +3,8 @@ name: Execute SSH Command
 on:
   push:
     branches:
-      - main  # Trigger the action on push to the main branch
+      - main
+      - master
 
 jobs:
   ssh-command-job:
