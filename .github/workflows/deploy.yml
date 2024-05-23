@@ -22,6 +22,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            echo "Running commands on the remote server"
-            # Your SSH command here
-            ls -la
+            echo "Running deployment on the server"
+            cd ~/memorias-de-vida
+            git pull
+            docker compose down -t 0
+            docker compose up -f docker-compose.prod.yml up -d --build
+            echo "Deployment completed!"
